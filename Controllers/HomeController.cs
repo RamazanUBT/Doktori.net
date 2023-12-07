@@ -6,10 +6,12 @@ namespace Doktori.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly MongoDBRepository _mongoDBRepository;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(MongoDBRepository mongoDBRepository, ILogger<HomeController> logger)
         {
+            _mongoDBRepository = mongoDBRepository;
             _logger = logger;
         }
 
