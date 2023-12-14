@@ -17,7 +17,7 @@ namespace Doktori.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult AdminLoginPage()
         {
             return View();
         }
