@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Doktori.ViewModels.AdminLogin
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -17,11 +19,11 @@
                 <h1 style="font-weight: bold; margin-top: 3rem; font-size: 45px">
                     Menaxho Doktoret
                 </h1>
-                <form class="d-flex flex-column mt-5">
+                <form asp-controller="Home" asp-action="SubmitAdminLogin" method="post" class="d-flex flex-column mt-5">
                     <div class="form-group"
                          style="width: 400px; display: flex; flex-direction: column">
                         <label style="color: #00000099; font-weight: 500">Email</label>
-                        <input type="email"
+                        <input asp-for="Email" type="email"
                                placeholder="filanfisteku@gmai.com"
                                required
                                style="height: 50px" />
@@ -35,7 +37,7 @@
                 flex-direction: column;
               ">
                         <label style="color: #00000099; font-weight: 500">Password</label>
-                        <input type="password"
+                        <input asp-for="Password" type="password"
                                placeholder="*********"
                                required
                                style="height: 50px" />
