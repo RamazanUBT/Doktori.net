@@ -49,19 +49,25 @@
                     <button type="submit"
                             class="btn"
                             style="
-                width: 400px;
-                height: 50px;
-                font-weight: 500;
-                top: 208px;
-                color: white;
-                padding: 15px 0;
-                border-radius: 10px;
-                border: none;
-                background: linear-gradient(90deg, #15cac4 0%, #1b6be1 100%);
-                margin-top: 3.5rem;
-              ">
+            width: 400px;
+            height: 50px;
+            font-weight: 500;
+            top: 208px;
+            color: white;
+            border-radius: 10px;
+            border: none;
+            background: linear-gradient(90deg, #15cac4 0%, #1b6be1 100%);
+            margin-top: 3.5rem;
+        ">
                         Kyçu
                     </button>
+
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger mt-3" role="alert">
+                            Invalid login attempt. Please check your email and password.
+                        </div>
+                    }
                 </form>
             </div>
         </div>
