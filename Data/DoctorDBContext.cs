@@ -25,9 +25,9 @@ namespace Doktori.Data
             doctorcollection.InsertOne(doctorData);
         }
 
-        public void Delete(string Name)
+        public void Delete(string id)
         {
-            var filter = Builders<DoctorEntity>.Filter.Eq(c => c.fullName, Name);
+            var filter = Builders<DoctorEntity>.Filter.Eq(c => c._id, id);
             doctorcollection.DeleteOne(filter);
         }
 
@@ -36,9 +36,9 @@ namespace Doktori.Data
             return doctorcollection.Find(a => true).ToList();
         }
 
-        public DoctorEntity GetDoctorDetails(string Name)
+        public DoctorEntity GetDoctorDetails(string id)
         {
-            var doctorDetails = doctorcollection.Find(m => m.fullName == Name).FirstOrDefault();
+            var doctorDetails = doctorcollection.Find(m => m._id == id).FirstOrDefault();
             return doctorDetails;
         }
 
@@ -46,9 +46,9 @@ namespace Doktori.Data
         {
             var filter = Builders<DoctorEntity>.Filter.Eq(c => c._id, _id);
             var update = Builders<DoctorEntity>.Update
-                .Set("Full Name", doctorData.fullName)
-                .Set("Email", doctorData.email)
-                .Set("Password", doctorData.password);
+                .Set("fullName", doctorData.fullName)
+                .Set("email", doctorData.email)
+                .Set("password", doctorData.password);
 
             doctorcollection.UpdateOne(filter, update);
         }

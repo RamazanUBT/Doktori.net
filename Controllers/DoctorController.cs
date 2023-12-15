@@ -37,9 +37,9 @@ namespace Doktori.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(string Name)
+        public IActionResult Edit(string id)
         {
-            var doctorDetails = _context.GetDoctorDetails(Name);
+            var doctorDetails = _context.GetDoctorDetails(id);
             return View(doctorDetails);
         }
 
@@ -51,23 +51,23 @@ namespace Doktori.Controllers
         }
 
         [HttpGet]
-        public IActionResult Details(string Name)
+        public IActionResult Details(string id)
         {
-            var doctorDetails = _context.GetDoctorDetails(Name);
+            var doctorDetails = _context.GetDoctorDetails(id);
             return View(doctorDetails);
         }
 
         [HttpGet]
-        public IActionResult Delete(string Name)
+        public IActionResult Delete(string id)
         {
-            var doctorDetails = _context.GetDoctorDetails(Name);
+            var doctorDetails = _context.GetDoctorDetails(id);
             return View(doctorDetails);
         }
 
         [HttpPost]
-        public IActionResult DeletePost(string Name)
+        public IActionResult DeletePost(string id)
         {
-            _context.Delete(Name);
+            _context.Delete(id);
             return RedirectToAction("Index");
         }
     }

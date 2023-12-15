@@ -8,10 +8,10 @@ namespace Doktori.Interface
 	{
 		IMongoCollection<DoctorEntity> doctorcollection { get; }
 		IEnumerable<DoctorEntity> GetAllDoctors ();
-		DoctorEntity GetDoctorDetails (string Name);
+		DoctorEntity GetDoctorDetails (string id);
 		void Create (DoctorEntity doctorData);
 		void Update (string _id, DoctorEntity doctorData);
-		void Delete (string Name);
+		void Delete (string id);
 	}
 }
 
