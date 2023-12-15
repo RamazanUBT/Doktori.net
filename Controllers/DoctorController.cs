@@ -65,9 +65,9 @@ namespace Doktori.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeletePost(string id)
+        public IActionResult DeletePost(string _id)
         {
-            _context.Delete(id);
+            _context.Delete(_id);
             return RedirectToAction("Index");
         }
     }
