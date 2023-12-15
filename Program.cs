@@ -2,11 +2,15 @@ using Doktori;
 using Doktori.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using Doktori.Interface;
+using Doktori.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<IDoctorsList, DoctorDBContext>();
 
 // Add MongoDB configuration
 builder.Services.Configure<MongoDBSettings>(

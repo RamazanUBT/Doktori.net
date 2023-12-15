@@ -33,7 +33,7 @@ namespace Doktori.Data
 
         public IEnumerable<DoctorEntity> GetAllDoctors()
         {
-            return doctorcollection.Find(a=>true).ToList();
+            return doctorcollection.Find(a => true).ToList();
         }
 
         public DoctorEntity GetDoctorDetails(string Name)
