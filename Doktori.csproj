@@ -13,14 +13,28 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.25" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.25" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.25" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Data\" />
     <None Remove="Interface\" />
+    <None Remove="Areas\" />
+    <None Remove="Areas\Identity\" />
+    <None Remove="Areas\Identity\Pages\" />
+    <None Remove="Data\Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Interface\" />
+    <Folder Include="Areas\" />
+    <Folder Include="Areas\Identity\" />
+    <Folder Include="Areas\Identity\Pages\" />
+    <Folder Include="Data\Migrations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Areas\Identity\Pages\_ViewStart.cshtml" />
   </ItemGroup>
 </Project>
